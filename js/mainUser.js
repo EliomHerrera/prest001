@@ -72,68 +72,80 @@ async function fnUpd() {
                 </tr>
     `
     }
-
-
 }
 
 fnUpd()
 
 let fnSend = document.getElementById("fnSend");
 fnSend.addEventListener("click", () => {
-    let monto = 0
-    let total = 0
 
-    if (nombre.value == "") {
-        alert("nombre esta vacio")
-        return
+    let clave = parseInt(prompt("Clave para crear cliente"))
+
+    if (clave == 351) {
+        let monto = 0
+        let total = 0
+
+        if (nombre.value == "") {
+            alert("nombre esta vacio")
+            return
+        }
+
+        if (cantidad.value == "") {
+            alert("cantidad esta vacio")
+            return
+        }
+
+        if (metodo.value == "Seleccionar") {
+            alert("Seleccionar Diario o Semanal")
+            return
+        }
+
+        if (metodo.value == "diario") {
+            monto = ((parseInt(cantidad.value) * 0.20) + parseInt(cantidad.value)) / 24
+            total = ((parseInt(cantidad.value) * 0.20) + parseInt(cantidad.value))
+        }
+
+        if (metodo.value == "semanal") {
+            monto = ((parseInt(cantidad.value) * 0.30) + parseInt(cantidad.value)) / 13
+            total = ((parseInt(cantidad.value) * 0.30) + parseInt(cantidad.value))
+        }
+
+        user.push({
+            id: userId,
+            nombre: nombre.value,
+            cantidad: cantidad.value,
+            metodo: metodo.value,
+            monto: monto,
+            uPago: '',
+            cPago: 0,
+            total: total
+        })
+
+        nombre.value = ""
+        cantidad.value = ""
+        metodo.value = "Seleccionar"
+
+        localStorage.setItem('user', JSON.stringify(user))
+
+        fnUpd()
+    } else {
+        alert('clave incorrecta')
     }
-
-    if (cantidad.value == "") {
-        alert("cantidad esta vacio")
-        return
-    }
-
-    if (metodo.value == "Seleccionar") {
-        alert("Seleccionar Diario o Semanal")
-        return
-    }
-
-    if (metodo.value == "diario") {
-        monto = ((parseInt(cantidad.value) * 0.20) + parseInt(cantidad.value)) / 24
-        total = ((parseInt(cantidad.value) * 0.20) + parseInt(cantidad.value))
-    }
-
-    if (metodo.value == "semanal") {
-        monto = ((parseInt(cantidad.value) * 0.30) + parseInt(cantidad.value)) / 13
-        total = ((parseInt(cantidad.value) * 0.30) + parseInt(cantidad.value))
-    }
-
-    user.push({
-        id: userId,
-        nombre: nombre.value,
-        cantidad: cantidad.value,
-        metodo: metodo.value,
-        monto: monto,
-        uPago: '',
-        cPago: 0,
-        total: total
-    })
-
-    nombre.value = ""
-    cantidad.value = ""
-    metodo.value = "Seleccionar"
-
-    localStorage.setItem('user', JSON.stringify(user))
-
-    fnUpd()
 })
 
 function fnDel(index) {
-    user.splice(index, 1)
 
-    localStorage.setItem('user', JSON.stringify(user))
+    let clave = parseInt(prompt("Clave Para Borrar Cliente"))
 
-    fnUpd()
+    if (clave == 350) {
+        user.splice(index, 1)
+
+        localStorage.setItem('user', JSON.stringify(user))
+
+        fnUpd()
+    } else {
+        alert('clave incorrecta')
+    }
 }
 
 function fnTiket(index) {
@@ -159,7 +171,7 @@ function fnTiket(index) {
                     <h3>Pago
                         <p><span>#</span> ${user[index].cPago}</p>
                     </h3>
-                    <p class="fecha" >fecha ${user[index].uPago}</p>
+                    <p class="fecha" >fecha ${fecha}</p>
                 </div>
             </div>
         </div>
@@ -168,12 +180,16 @@ function fnTiket(index) {
 
 function fnPagar(index) {
 
-    user[index].cPago++
+    let clave = parseInt(prompt("Clave Para Pagos"))
 
-    localStorage.setItem('user', JSON.stringify(user))
+    if (clave == 351) {
+        user[index].cPago++
 
-    fnTiket(index)
-    fnUpd()
+        localStorage.setItem('user', JSON.stringify(user))
+
+        fnTiket(index)
+        fnUpd()
+    } else {
+        alert('clave incorrecta')
+    }
 }
-
-

@@ -327,10 +327,8 @@ a {
         }
     }
 
-
     .menu {
         display: block;
-        width: 150px;
         text-align: center;
         background: var(--tema);
         position: relative;
@@ -338,24 +336,24 @@ a {
         &:hover .menu-item {
             display: block;
             background: var(--tema);
-            width: 150px;
         }
 
         .menu-title {
             display: block;
-            margin-bottom: 1px;
+            border-bottom: 1px solid white;
+            box-shadow: 1px 1px 5px black;
         }
 
         .menu-content {
-            display: flex;
-            flex-direction: column;
+            display: block;
             position: absolute;
-            background: white;
+            cursor: pointer;
+            width: 100%;
         }
 
         .menu-item {
             display: none;
-            margin-bottom: 1px;
+            border-bottom: 1px solid white;
 
             &:hover {
                 background: black;
