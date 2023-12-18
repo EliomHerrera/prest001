@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliomPrestamos</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mainUser.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-title"><a>EliomPrestamos</a></div>
+
+            <ul class="header-content">
+                <li class="header-item"><a>Inicio</a></li>
+                <li class="header-item"><a>Pagos</a></li>
+                <li class="header-item"><a>Tiket</a></li>
+            </ul>
+
+        </header>
+
+        <main class="main">
+            <h1 class="main-title">Eliom Prestamos</h1>
+
+            <div class="main-content">
+                <div class="main-item">
+
+                    <fieldset class="form">
+                        <h3 class="form-title">
+                            Formulario
+                        </h3>
+
+                        <div class="form-content">
+                            <div class="form-item">
+                                <label for="nombre">nombre
+                                    <input class="input-t2" type="text" id="nombre">
+                                </label>
+                            </div>
+                            <div class="form-item">
+                                <label for="cantidad">cantidad
+                                    <input class="input-t2" type="text" id="cantidad">
+                                </label>
+                            </div>
+                            <div class="form-item">
+                                <label for="metodo">metodo
+                                    <select class="select" id="metodo">
+                                        <option class="select-item" selected>Seleccionar</option>
+                                        <option class="select-item" value="diario">Diario</option>
+                                        <option class="select-item" value="semanal">Semanal</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <button class="btn" id="fnSend">Enviar</button>
+                        </div>
+
+                    </fieldset>
+
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="table-title">Nombre</th>
+                                <th class="table-title">Cantidad</th>
+                                <th class="table-title">Metodo</th>
+                                <th class="table-title">X</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaDeudor">
+                            <tr class="table-content">
+                                <td class="table-item">nio se </td>
+                                <td class="table-item">nio se </td>
+                                <td class="table-item">nio se </td>
+                                <td class="table-item">nio se </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="main-item">
+                    pagos
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="table-title">Nombre</th>
+                                <th class="table-title">Monto</th>
+                                <th class="table-title">Restante</th>
+                                <th class="table-title">U/Pago</th>
+                                <th class="table-title">C/Pago</th>
+                                <th class="table-title">Pagar</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tablaPagos">
+                            <tr class="table-content">
+                                <td class="table-item">nio se </td>
+                                <td class="table-item">nio se </td>
+                                <td class="table-item">nio se </td>
+                                <td class="table-item">nio se </td>
+                                <td class="table-item">nio se </td>
+                                <td class="table-item">nio se </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="main-item">
+                    <h3>Tiket</h3>
+                    <div id="tiket">
+
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+
+    </div>
+</body>
+
+<script src="js/main.js"></script>
+<script src="js/mainUser.js"></script>
+
+</html>
