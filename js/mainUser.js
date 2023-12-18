@@ -63,7 +63,6 @@ async function fnUpd() {
                     <td>${i.nombre}</td>
                     <td>${i.monto}</td>
                     <td>${i.total - (i.cPago * i.monto)}</td>
-                    <td>${i.uPago}</td>
                     <td>${i.cPago}</td>
 
                     <td>
@@ -170,7 +169,6 @@ function fnTiket(index) {
 function fnPagar(index) {
 
     user[index].cPago++
-    user[index].uPago = fecha
 
     localStorage.setItem('user', JSON.stringify(user))
 

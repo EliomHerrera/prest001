@@ -184,25 +184,25 @@ a {
         width: 100%;
         z-index: 2;
     }
-}
 
-.dropdown-title {
-    padding: var(--p10);
-    border-bottom: 1px solid white;
+    .dropdown-title {
+        padding: var(--p10);
+        border-bottom: 1px solid white;
 
-}
+    }
 
-.dropdown-content {
-    display: none;
-}
+    .dropdown-content {
+        display: none;
+    }
 
-.dropdown-item {
-    background: var(--tema);
-    padding: var(--p10);
-    border-bottom: 1px solid white;
+    .dropdown-item {
+        background: var(--tema);
+        padding: var(--p10);
+        border-bottom: 1px solid white;
 
-    &:hover {
-        background: black;
+        &:hover {
+            background: black;
+        }
     }
 }
 
@@ -262,7 +262,7 @@ a {
     .table-title {
         background: var(--tema);
         color: var(--text);
-        padding: var(--p10);
+        padding: 5px;
     }
 
     .table-content {}
@@ -270,7 +270,7 @@ a {
     .table-item {
         color: black;
         font-weight: 500;
-        padding: var(--p10);
+        padding: 5px;
         background: cornsilk;
         border-bottom: solid 4px var(--tema);
     }
@@ -296,15 +296,35 @@ a {
 
 /* Estilos para móviles */
 @media only screen and (max-width: 767px) {
-
-
-
     .container {
         display: inline;
     }
 
+    .header {
+        display: block;
+        text-align: center;
+
+        .header-title {
+            height: 60px;
+            font-size: 2em;
+        }
+
+        .header-content {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-item {
+            width: 100%;
+        }
+    }
+
     .main {
         margin: 0;
+
+        .main-title {
+            display: none;
+        }
     }
 
 
