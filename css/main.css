@@ -115,12 +115,11 @@ a {
     .main-item {
         margin: 40px 0;
 
-        & h3 {
+        &>h3 {
             margin: 1em;
             color: var(--tema);
         }
 
-        & p {}
     }
 }
 
@@ -279,6 +278,8 @@ a {
 .form {
     padding: 10px;
     margin: 40px 0;
+    background: var(--tema);
+    color: white;
 
     .form-title {
         padding: var(--p10);
