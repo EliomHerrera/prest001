@@ -66,6 +66,7 @@ a {
 .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    /* place-content: center; */
     gap: 10px;
 }
 
@@ -81,8 +82,7 @@ a {
 
         &:hover {
             background: white;
-            transition: 1s;
-            transform: translate(1px) rotate(1turn);
+            transition: 0.5s;
         }
     }
 
@@ -92,6 +92,7 @@ a {
 
     .header-item {
         display: inline-block;
+        cursor: pointer;
 
         &:hover {
             background: white;
@@ -146,6 +147,7 @@ a {
 
     .aside-item {
         border: solid 1px white;
+        cursor: pointer;
 
         &:hover {
             background: white;
@@ -198,6 +200,7 @@ a {
         background: var(--tema);
         padding: var(--p10);
         border-bottom: 1px solid white;
+        cursor: pointer;
 
         &:hover {
             background: black;
@@ -244,6 +247,7 @@ a {
     }
 
     .menu-item {
+        cursor: pointer;
 
         &:hover {
             color: var(--tema);

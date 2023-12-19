@@ -28,16 +28,16 @@ function fnDate() {
     userId = `${mes}${dia}${horas}${minutos}${segundos}`
 }
 
-
 async function fnUpd() {
     fnDate()
 
     if (localStorage.length == 0) {
+        // convierte a texto plano
         localStorage.setItem('user', JSON.stringify(user))
     }
 
-    userLocal = localStorage.getItem('user')
-    user = JSON.parse(userLocal)
+    // convierte a valores del array
+    user = JSON.parse(localStorage.getItem('user'))
 
     tablaDeudor.textContent = ""
 
