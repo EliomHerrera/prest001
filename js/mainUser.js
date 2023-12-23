@@ -100,8 +100,13 @@ fnSend.addEventListener("click", () => {
             return
         }
 
-        if (metodo.value == "diario") {
+        if (metodo.value == "diario 24") {
             monto = ((parseInt(cantidad.value) * 0.20) + parseInt(cantidad.value)) / 24
+            total = ((parseInt(cantidad.value) * 0.20) + parseInt(cantidad.value))
+        }
+
+        if (metodo.value == "diario 30") {
+            monto = ((parseInt(cantidad.value) * 0.20) + parseInt(cantidad.value)) / 30
             total = ((parseInt(cantidad.value) * 0.20) + parseInt(cantidad.value))
         }
 
