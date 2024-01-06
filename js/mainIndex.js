@@ -2,6 +2,7 @@ let user = []
 let userId = 0
 let fecha = ''
 
+
 let nombre = document.getElementById("nombre")
 let cantidad = document.getElementById("cantidad")
 let metodo = document.getElementById("metodo")
@@ -23,6 +24,8 @@ function fnDate() {
 
     userId = `${mes}${dia}${horas}${minutos}${segundos}`
 }
+
+
 
 async function fnUpd() {
     fnDate()
@@ -130,3 +133,6 @@ function fnDel(index) {
         alert('clave incorrecta')
     }
 }
+
+let fechaOjo = document.getElementById("fechaOjo")
+fechaOjo.textContent = fecha + '-2024'

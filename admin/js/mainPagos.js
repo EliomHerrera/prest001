@@ -1,5 +1,25 @@
 let tablaPagos = document.getElementById("tablaPagos")
 
+let fecha = ''
+
+function fnDate() {
+
+    let fechaActual = new Date();
+    let dia = fechaActual.getDate();
+    let mes = fechaActual.getMonth() + 1;
+    let ano = fechaActual.getFullYear();
+
+    fecha = `${dia}-${mes}`
+
+    let horas = fechaActual.getHours();
+    let minutos = fechaActual.getMinutes();
+    let segundos = fechaActual.getSeconds();
+
+    userId = `${mes}${dia}${horas}${minutos}${segundos}`
+}
+
+fnDate()
+
 async function fnUpd() {
 
     if (localStorage.length == 0) {
@@ -45,3 +65,6 @@ function fnPagar(index) {
         alert('clave incorrecta')
     }
 }
+
+let fechaOjo = document.getElementById("fechaOjo")
+fechaOjo.textContent = fecha + '-2024'
