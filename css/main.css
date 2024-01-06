@@ -322,6 +322,10 @@
 
 /* Estilos para móviles */
 @media only screen and (max-width: 767px) {
+    .main {
+        margin: 0;
+        padding: 0;
+    }
 
     .container {
         display: inline;
