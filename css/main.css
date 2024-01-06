@@ -1,102 +1,133 @@
+:root {
+    --theme: red;
+}
+
 * {
-    margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    margin: 0;
     list-style: none;
     text-decoration: none;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-:root {
-    --tema: red;
-    --text: white;
-    --p10: 10px;
-}
-
-.none {
-    display: none;
-}
-
-.flex {
-    display: flex;
-}
-
-.input-t2 {
-    width: 100%;
-    padding: 10px;
-    font-size: 20px;
+.input {
+    display: block;
     border-top: none;
     border-right: none;
     border-left: none;
     outline: none;
+    margin: 10px;
 
     &:focus {
-        border-bottom: 5px solid var(--tema);
+        border-bottom: 2px solid var(--theme);
     }
 }
 
-a {
-    display: block;
-    color: var(--text);
-    padding: var(--p10);
+.label {
+    font-weight: 700;
+}
 
-    &:hover {
-        color: var(--tema);
+.btn-content {
+    display: flex;
+    justify-content: center;
+
+    .btn-item {
+        transition: all .1s;
+        box-shadow: 1px 1px 2px black;
+        padding: 10px;
+        min-width: 100px;
+        height: 40px;
+
+        &:active {
+            background: white;
+            box-shadow: 1px 1px 5px black;
+        }
+
     }
 }
 
-.btn {
-    width: 100%;
-    height: 40px;
-    margin: 5px 0;
-    border: none;
-    transition: all .1s;
-    box-shadow: 1px 1px 5px black;
-
-    &:active {
-        background: white;
-        box-shadow: 1px 1px 5px black;
-    }
-
-    &:hover {
-        border: 1px solid #303134;
-    }
+.d-none {
+    display: none;
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* place-content: center; */
-    gap: 10px;
+    gap: 20px;
+}
+
+.container-center {
+    display: grid;
+    grid-template-columns: 10px 1fr 10px;
+
+    justify-content: center;
 }
 
 .header {
-    background: var(--tema);
-    grid-column: 1/-1;
+    background: var(--theme);
+    grid-column: 1/5;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 
     .header-title {
-        cursor: pointer;
+        color: white;
+        padding: 20px;
+        font-size: 32px;
+        box-shadow: 0px 0px 1px black;
 
         &:hover {
             background: white;
-            transition: 0.5s;
+            color: var(--theme);
         }
     }
 
     .header-content {
-        margin: 0 10%;
+        display: flex;
+
     }
 
     .header-item {
-        display: inline-block;
-        cursor: pointer;
+        color: white;
+        padding: 20px;
 
         &:hover {
-            background: white;
-            color: var(--tema);
+            background: black;
+        }
+    }
+}
+
+.aside {
+    background: var(--theme);
+    grid-column: 1/2;
+    border: solid 1px var(--theme);
+    padding: 20px;
+    margin: 10px;
+    color: white;
+    text-align: center;
+
+    .aside-title {
+        font-size: 2em;
+        margin-bottom: 10px;
+        border-bottom: solid 2px white;
+    }
+
+    .aside-content {
+        background: var(--theme);
+        padding: 2px;
+    }
+
+    .aside-item {
+        border: solid 1px white;
+        cursor: pointer;
+        padding: 10px;
+
+        &:hover {
+            background: black;
+        }
+
+        a {
+            color: white;
         }
     }
 }
@@ -106,7 +137,7 @@ a {
     margin: 0 10%;
 
     .main-title {
-        color: var(--tema);
+        color: var(--theme);
         margin: 1em 0;
         text-align: center;
     }
@@ -118,50 +149,17 @@ a {
 
         &>h3 {
             margin: 1em;
-            color: var(--tema);
-        }
-
-    }
-}
-
-.aside {
-    background: var(--tema);
-    border: solid 1px var(--tema);
-    padding: var(--p10);
-    margin: 10px;
-
-    color: var(--text);
-    text-align: center;
-    grid-column: 1/2;
-
-    .aside-title {
-        font-size: 2em;
-        margin-bottom: 10px;
-        border-bottom: solid 2px white;
-    }
-
-    .aside-content {
-        background: var(--tema);
-        padding: 2px;
-    }
-
-    .aside-item {
-        border: solid 1px white;
-        cursor: pointer;
-
-        &:hover {
-            background: white;
-            color: var(--tema);
+            color: var(--theme);
         }
     }
 }
 
 .footer {
-    background: var(--tema);
-    grid-column: 1/-1;
+    background: var(--theme);
+    grid-column: 1/5;
     text-align: center;
-    padding: var(--p10);
-    color: var(--text);
+    padding: 10px;
+    color: white;
     margin-top: 2em;
 
     .footer-title {}
@@ -174,10 +172,12 @@ a {
 .dropdown {
     display: inline-block;
     position: relative;
-    background: var(--tema);
+    background: var(--theme);
     text-align: center;
-    color: var(--text);
+    color: white;
     margin: 5px;
+    min-width: 140px;
+    box-shadow: 1px 1px 5px black;
 
     &:hover .dropdown-content {
         position: absolute;
@@ -187,73 +187,64 @@ a {
     }
 
     .dropdown-title {
-        padding: var(--p10);
-        border-bottom: 1px solid white;
-
+        padding: 10px;
     }
 
     .dropdown-content {
         display: none;
+        background: white;
+        box-shadow: 1px 1px 5px black;
     }
 
     .dropdown-item {
-        background: var(--tema);
-        padding: var(--p10);
-        border-bottom: 1px solid white;
+        background: var(--theme);
+        margin: 2px;
+        padding: 10px;
         cursor: pointer;
 
         &:hover {
             background: black;
         }
+
+        a {
+            color: white;
+        }
     }
 }
 
 .acordeon {
-    background: var(--tema);
+    background: var(--theme);
     box-shadow: 1px 1px 5px black;
     padding: 2px;
     margin: 20px 5px;
     min-width: 200px;
 
     .acordeon-title {
-        padding: var(--p10);
-        color: var(--text);
+        padding: 10px 20px;
+        font-size: 20px;
+        color: white;
+
+        &::after {
+            content: "Mostrar";
+            text-decoration: underline;
+            color: white;
+            font-size: 12px;
+            margin-right: 7%;
+
+            position: absolute;
+            right: 70px;
+        }
     }
 
     .acordeon-content {}
 
     .acordeon-item {
         background: beige;
-        border: 10px solid var(--tema);
+        border: 2px solid var(--theme);
         padding: 20px 40px;
     }
-}
 
-.menu {
-    grid-column: 1/-1;
-    color: var(--text);
-    background: var(--tema);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
-    .menu-title {
-        display: none;
-        padding: 13px;
-    }
-
-    .menu-content {
-        display: flex;
-    }
-
-    .menu-item {
-        cursor: pointer;
-
-        &:hover {
-            color: var(--tema);
-            background: white;
-        }
-    }
 }
 
 .table {
@@ -261,10 +252,11 @@ a {
     text-align: center;
     padding: 10px;
     box-shadow: 1px 1px 10px gray;
+    margin: 20px 0;
 
     .table-title {
-        background: var(--tema);
-        color: var(--text);
+        background: var(--theme);
+        color: white;
         padding: 5px;
     }
 
@@ -275,96 +267,150 @@ a {
         font-weight: 500;
         padding: 5px;
         background: cornsilk;
-        border-bottom: solid 4px var(--tema);
+        border-bottom: solid 4px var(--theme);
     }
 }
 
 .form {
     padding: 10px;
-    margin: 40px 0;
+    margin: 40px 5px;
     background: var(--tema);
-    color: white;
+    color: black;
 
     .form-title {
+        color: var(--theme);
         padding: var(--p10);
+        font-size: 1.5em;
+        width: 100px;
+        margin: auto;
     }
 
     .form-content {
-        margin: 5px;
+        width: 200px;
+        margin: auto;
     }
 
     .form-item {
         padding: 5px;
-        margin-bottom: 5px;
+    }
+}
+
+.menu {
+    text-align: center;
+
+    .menu-title {
+        display: none;
+        padding: 10px;
+    }
+
+    .menu-content {
+        display: flex;
+    }
+
+    .menu-item {
+        a {
+            color: white;
+            padding: 20px;
+
+            &:hover {
+                background: black;
+            }
+
+        }
     }
 }
 
 /* Estilos para móviles */
 @media only screen and (max-width: 767px) {
+
     .container {
         display: inline;
     }
 
-    .header {
-        display: block;
-        text-align: center;
+    .aside {
+        padding: 10px;
+        position: relative;
+        box-shadow: 1px 1px 5px black;
+        width: 140px;
+        background: white;
 
-        .header-title {
-            height: 60px;
-            font-size: 2em;
-        }
-
-        .header-content {
+        &:hover .aside-content {
+            display: block;
+            position: absolute;
+            background: white;
+            box-shadow: 1px 1px 5px black;
+            top: 0px;
+            left: 0;
             margin: 0;
             padding: 0;
         }
 
-        .header-item {
-            width: 100%;
+        .aside-title {
+            font-size: 1em;
+            margin: 0;
+            border: none;
+            color: var(--theme);
         }
-    }
 
-    .main {
-        margin: 0;
-
-        .main-title {
+        .aside-content {
+            width: 100%;
             display: none;
+            background: white;
+
+        }
+
+        .aside-item {
+            background: var(--theme);
+            box-shadow: 1px 1px 5px black;
+
         }
     }
 
     .menu {
-        display: block;
-        text-align: center;
-        background: var(--tema);
-        position: relative;
+        display: inline-block;
+        position: fixed;
+        min-width: 100px;
+        background: white;
+        box-shadow: 5px 10px 15px var(--theme);
+        z-index: 3;
+        right: 10px;
 
-        &:hover .menu-item {
+        &:hover {
+            box-shadow: none;
+        }
+
+        &:hover .menu-content {
+            position: absolute;
             display: block;
-            background: var(--tema);
+            width: 100%;
+            top: 0px;
+
         }
 
         .menu-title {
             display: block;
-            border-bottom: 1px solid white;
             box-shadow: 1px 1px 5px black;
+            color: var(--theme);
         }
 
         .menu-content {
-            display: block;
-            position: absolute;
-            cursor: pointer;
-            width: 100%;
+            display: none;
+            background: cornsilk;
+            box-shadow: 1px 1px 5px black;
         }
 
         .menu-item {
-            display: none;
-            border-bottom: 1px solid white;
 
-            &:hover {
-                background: black;
-                color: var(--text);
+            a {
+                display: block;
+                color: var(--theme);
+                padding: 15px;
+
+                &:hover {
+                    background: black;
+                    color: white;
+                }
             }
         }
     }
-
 }

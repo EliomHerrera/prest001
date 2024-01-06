@@ -1,0 +1,9 @@
+.btn {
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.red {
+    background: red;
+    color: white;
+}
