@@ -133,6 +133,3 @@ function fnDel(index) {
         alert('clave incorrecta')
     }
 }
-
-let fechaOjo = document.getElementById("fechaOjo")
-fechaOjo.textContent = fecha + '-2024'
