@@ -25,12 +25,10 @@ function fnDate() {
     userId = `${mes}${dia}${horas}${minutos}${segundos}`
 }
 
-
-
 async function fnUpd() {
     fnDate()
 
-    if (localStorage.length == 0) {
+    if (localStorage.getItem('user') == null) {
         // convierte a texto plano
         localStorage.setItem('user', JSON.stringify(user))
     }
@@ -38,7 +36,7 @@ async function fnUpd() {
     // convierte a valores del array
     user = JSON.parse(localStorage.getItem('user'))
 
-    tablaDeudor.textContent = ""
+    tablaDeudor.innerHTML = ""
 
     for (let [index, i] of Object.entries(user)) {
         tablaDeudor.innerHTML += `
