@@ -14,11 +14,9 @@ function fnTiket() {
     
         <tr class="table-content">
             <td class="table-item">${e.nombre}</td>
-            <td class="table-item">${e.cantidad}</td>
             <td class="table-item">${e.monto}</td>
-            <td class="table-item">${e.uPago}</td>
             <td class="table-item">${e.cPago}</td>
-            <td class="table-item">Pagado</td>
+            <td class="table-item">${e.uPago}</td>
         </tr>
         `
     })
